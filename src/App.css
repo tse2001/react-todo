@@ -52,12 +52,12 @@ header {
 
 .todo-item{
   font-size: 18px;
-  padding: 16px 24px;
+  padding: 8px 16px;
   border-bottom: 1px solid gray;
   border-radius: 10px;
 }
 
-.item-content{
+.item-content,.item-icon{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,9 +66,6 @@ header {
 .item-icon .item-buttons{
   border: none;
   background: none;
-}
-
-.item-icon button {
   padding-left: 16px;
 }
 

@@ -1,9 +1,15 @@
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { actions, useStore } from '../store';
-import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+
 function Todo({ index, content, btnRef }) {
     const [ ,dispatch] = useStore();
+
+    const handleClick = () => {
+        btnRef.current.textContent = 'Change';
+        dispatch(actions.setInput(content));
+        dispatch(actions.setIndex(index));
+    }
 
     return (
         <li className="todo-item">
@@ -15,12 +21,7 @@ function Todo({ index, content, btnRef }) {
                 <div className="item-icon">
                     <button
                         className="item-buttons"
-                        onClick={() => {
-                            btnRef.current.textContent = 'Change';
-                            btnRef.current.startIcon = <ChangeCircleIcon />;
-                            dispatch(actions.setInput(content));
-                            dispatch(actions.setIndex(index));
-                        }}
+                        onClick={handleClick}
                     >
                         <BorderColorIcon />
                     </button>
