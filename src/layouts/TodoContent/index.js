@@ -8,7 +8,6 @@ function TodoContent({ btnRef }) {
         const result = state.todos.map((task, index) => (
             <Todo key={index} index={index} content={task} btnRef={btnRef} />
         ));
-        console.log(result);
 
         return result;
     };
