@@ -10,7 +10,7 @@ function TodoButton() {
 
     const handleClick = () => {
         if (todoInput.trim() === '') {
-            alert('Vui lòng nhập công việc khác khoảng trắng!');
+            alert('Please input not null!');
         } else {
             if (btnRef.current.textContent === 'Add') {
                 dispatch(actions.addTodo(todoInput));
